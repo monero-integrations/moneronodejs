@@ -1,0 +1,22 @@
+{
+  "name": "moneronodejs",
+  "version": "1.0.0",
+  "description": "NodeJS module for generating Monero address",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monero-integrations/moneronodejs.git"
+  },
+  "keywords": [
+    "monero"
+  ],
+  "author": "SerHack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monero-integrations/moneronodejs/issues"
+  },
+  "homepage": "https://github.com/monero-integrations/moneronodejs#readme"
+}
