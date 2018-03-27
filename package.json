@@ -13,7 +13,11 @@
   "keywords": [
     "monero"
   ],
-  "author": "SerHack",
+  "author": "Monero-Integrations team <support@monerointegrations.com> (https://monerointegrations.com)",
+  "constributors": [
+    "SerHack <nico@serhack.me> (https://serhack.me)",
+    "sneurlax <sneurlax@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/monero-integrations/moneronodejs/issues"
