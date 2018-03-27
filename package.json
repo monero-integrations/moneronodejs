@@ -2,7 +2,7 @@
   "name": "moneronodejs",
   "version": "2.0.0",
   "description": "A Monero library written in Node.js by the Monero-Integrations team.",
-  "main": "example.js",
+  "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
