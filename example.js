@@ -11,10 +11,13 @@ daemonRPC.getblockcount()
 
 var walletRPC = new Monero.walletRPC();
 
-walletRPC.open_wallet()
-.then(wallet => {
-  walletRPC.getaddress()
-  .then(balance => {
-    console.log(balance);
+walletRPC.create_wallet('monero_wallet', '')
+.then(new_wallet => {
+  walletRPC.open_wallet('monero_wallet', '')
+  .then(wallet => {
+    walletRPC.getaddress()
+    .then(balance => {
+      console.log(balance);
+    });
   });
 });
