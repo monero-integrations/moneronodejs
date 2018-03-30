@@ -17,16 +17,16 @@ This library has two main parts: a Monero daemon JSON RPC API wrapper, `daemonRP
 
 ---
 
-1. Start the Monero daemon (`monerod`) on testnet
+1. Start the Monero daemon (`monerod`)
 ```bash
 monerod --testnet --detach
 ```
 
-2. Start the Monero wallet RPC interface (`monero-wallet-rpc`) on testnet
+2. Start the Monero wallet RPC interface (`monero-wallet-rpc`)
 ```bash
 monero-wallet-rpc --testnet --rpc-bind-port 28083 --disable-rpc-login --wallet-dir /path/to/wallet/directory
 ```
 
 3. Edit `example.js` with your the IP address of `monerod` and `monero-wallet-rpc` (use `127.0.0.1:28081` and `127.0.0.1:28083`, respectively, for testnet)
 
-4. Run `example.js` with `node example.js`.  If everything has been set up correctly, information from your Monero daemon and wallet will be displayed.
+4. Run `example.js` with `node example.js`.  If everything has been set up correctly, information from your Monero daemon and wallet will be displayed
