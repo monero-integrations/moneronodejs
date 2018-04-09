@@ -15,6 +15,11 @@ This library has two main parts: a Monero daemon JSON RPC API wrapper, `daemonRP
  - Monero daemon
  - Node.js
 
+## Installation
+```bash
+npm install https://github.com/sneurlax/moneronodejs
+```
+
 ---
 
 1. Start the Monero daemon (`monerod`)
