@@ -26,9 +26,10 @@ walletRPC.create_wallet('monero_wallet', '')
 });
 
 // Autoconnect asynchronously (with a promise)
-new Monero.daemonRPC({ autoconnect: true })
-.then((daemonRPC) => {
-  // return daemonRPC;
+var daemonRPC = new Monero.daemonRPC({ autoconnect: true, random: true })
+.then((daemon) => {
+  daemonRPC = daemon;
+  
   daemonRPC.getblockcount()
   .then(blocks => {
     console.log(blocks['count'] - 1);
