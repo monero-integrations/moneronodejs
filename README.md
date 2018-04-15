@@ -3,7 +3,7 @@ A Monero library written in Node.js by the [Monero Integrations](https://moneroi
 
 [//]: # (Update contributors link to https://github.com/monero-integrations/moneronodejs/graphs/contributors if/when it is merged in)
 
-*See sister project [monerojs](https://github.com/sneurlax/monerojs) for a vanilla Javascript library that can be imported into HTML pages directly*
+**NOTE:** due to the existence of the [`monero-nodejs` package by PsychicCat](https://github.com/PsychicCat/monero-nodejs), `moneronodejs` will never be publishable on npm.  Thus, this repository is being finalized, archived, and continued as [`monerojs`](https://github/com/sneurlax/monerojs).  If the Monero Integrations team will merge this into [monero-ingtegrations/moneronodejs](https://github.com/monero-integrations/moneronodejs) then it will be revived and updated as needed, otherwise please refer to [`monerojs`](https://github/com/sneurlax/monerojs) for the latest code and best features.
 
 [//]: # (Update monerojs repository link to https://github.com/monero-integrations/monerojs if/when it is merged in)
 
@@ -12,26 +12,30 @@ This library has two main parts: a Monero daemon JSON RPC API wrapper, `daemonRP
 
 ## Configuration
 ### Requirements
- - Monero daemon
  - Node.js
+
+*Monero daemon now optional!*
 
 ## Installation
 ```bash
-npm install https://github.com/sneurlax/moneronodejs
+npm install monerojs
 ```
+*`--save` optional*
 
----
+## Usage
+```js
+const Monero = require('monerojs');
 
-1. Start the Monero daemon (`monerod`)
-```bash
-monerod --testnet --detach
+var daemonRPC = new Monero.daemonRPC({ autoconnect: true })
+.then((daemon) => {
+  daemonRPC = daemon;
+  
+  daemonRPC.getblockcount()
+    .then(blocks => {
+      console.log(blocks);
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 ```
-
-2. Start the Monero wallet RPC interface (`monero-wallet-rpc`)
-```bash
-monero-wallet-rpc --testnet --rpc-bind-port 28083 --disable-rpc-login --wallet-dir /path/to/wallet/directory
-```
-
-3. Edit `example.js` with your the IP address of `monerod` and `monero-wallet-rpc` (use `127.0.0.1:28081` and `127.0.0.1:28083`, respectively, for testnet)
-
-4. Run `example.js` with `node example.js`.  If everything has been set up correctly, information from your Monero daemon and wallet will be displayed
